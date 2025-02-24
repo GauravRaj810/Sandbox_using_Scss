@@ -1,0 +1,127 @@
+.footer-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: 1260px;
+  margin-bottom: 50px;
+
+ 
+
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  h3{
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
+// Quick Links styling -----
+
+.footer-links a {
+  color: $clr-blue;
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 28.9px;
+  transition: color 0.3s ease-in-out;
+}
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: $clr-blue;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.footer-links a:hover {
+  color: $clr-pink;
+}
+.footer-links a:hover::after {
+  width: 100%;
+  box-shadow: 0 0 8px $clr-blue; /* Glowing effect */
+}
+
+.contact-item{
+    margin-right: 8px;
+  
+}
+
+.footer-link {
+  display: flex;
+  gap: 20px;
+  .anchor-features {
+    color: $clr-blue;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.3s ease;
+  }
+  .anchor-features:hover {
+    transform: scale(1.3) rotate(10deg);
+    box-shadow: 0 0 30px $primary-color;
+  }
+}
+
+.footer-bottom {
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 50px;
+  color: $clr-white;
+  background: $clr-pink;
+}
+
+/* Style for the Back to Top Button */
+.top-link {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  background: $clr-blue;
+  color: $clr-white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* When 'show-link' class is added, make it visible + animate */
+.top-link.show-link {
+  opacity: 1;
+  visibility: visible;
+  animation: bounce 1s infinite ease-in-out;
+  transition: $transition;
+}
+.top-link.show-link:hover {
+  background: $clr-pink;
+}
+
+/* Infinite Bounce Effect */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

@@ -5,7 +5,6 @@ $large-screen: 1024px;
 $xlarge-screen: 1280px;
 
 // ************ Media Queries for Responsiveness ************
-
 @media screen and (max-width: $small-screen) {
   .nav-bar {
     flex-direction: column;

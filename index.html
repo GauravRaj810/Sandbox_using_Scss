@@ -22,10 +22,13 @@
     <!-- header -->
     <header id="home">
         <div class="container">
+            <div class="side-logo">
+                <img src="/images/img-logo.png" alt="image">
+            </div>
             <nav class="nav-bar">
                 <!-- left-nav-item -->
                 <div>
-                    <ul type="none" class="nav-items">
+                    <ul type="none" class="nav-items ">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#">Pages</a></li>
                         <li><a href="#">Projects</a></li>
@@ -41,14 +44,62 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="#feature-part">About</a></li>
                         <li><a href="#footer">Contact Us</a></li>
+                        <div class="language-mode">
+                            <select id="languageSwitcher" onchange="changeLanguage(this.value)">
+                                <option value="en">En</option>
+                                <option value="ar">Ar</option>
+                            </select>
+                        </div>
                     </ul>
                 </div>
             </nav>
-            
+            <!-- Sidebar-Mobile  -->
+            <button class="mobile-view-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <img src="/images/img-logo.png" class="logo" alt="" />
+                    <div class="language-mode">
+                        <select id="languageSwitcher" onchange="changeLanguage(this.value)">
+                            <option value="en">En</option>
+                            <option value="ar">Ar</option>
+                        </select>
+                    </div>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <!-- links -->
+                <ul type="none" class="links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#feature-part">About</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+                <div class="footer-side-section ">
+                    <h3>Follow Us</h3>
+                    <ul type="none" class="footer-mobile-link">
+                        <a href="https://www.facebook.com/TMXGlobal/" class="link-features">
+                            <li><i class="fa-brands fa-facebook" style="color: #3f3852;"></i></li>
+                        </a>
+                        <a href="https://www.instagram.com/tmx_global_ltd/" class="link-features">
+                            <li><i class="fa-brands fa-instagram " style="color: #3f3852;"></i></li>
+                        </a>
+                        <a href="https://x.com/tmxglobal_tmx" class="link-features">
+                            <li><i class="fa-brands fa-x-twitter" style="color: #3f3852;"></i></li>
+                        </a>
+                        <a href="https://www.youtube.com/results?search_query=fun+with+gaurav" class="link-features">
+                            <li><i class="fa-brands fa-youtube" style="color: #3f3852;"></i></li>
+                        </a>
+                    </ul>
+                </div>
+        </div>
+        </aside>
     </header>
     <!-- end of header -->
-     <!-- hero section  -->
-     <div class="hero-section">
+    <!-- hero section  -->
+    <div class="hero-section">
         <div class="hero-content">
             <h1 class="hero-section-title">We bring solutions to make life easier</h1>
             <p class="hero-section-description">We are a creative company that focuses on long term relationships with
@@ -59,233 +110,240 @@
             </div>
             <!--End Read More button -->
         </div>
-        <!-- end of header content -->
+        <!-- end of hero content -->
     </div>
-
-    <section class="branding-section container ">
-        <div class="branding-cards">
-            <div class="branding-card-box">
-                <div class="img-wrapper">
-                    <img src="/images/content-marketing.jpg" alt="image">
-                </div>
-                <h2>Content Marketing</h2>
-                <p>Boost your brand with effective storytelling, SEO-driven articles, and strategic campaigns that
-                    engage
-                    .</p>
-                <!-- learn More Arrow -->
-                <div class="learn-more-arrow">
-                    <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
-                </div>
-            </div>
-
-            <!-- branding Cards -->
-            <div class="branding-card-box">
-                <div class="img-wrapper">
-                    <img src="/images/social-engagement.png" alt="image">
-                </div>
-                <h2>Social Engagement</h2>
-                <p>Connect with your audience through interactive content, social media strategies, and engagement
-                    techniques and stastics .</p>
-                <div class="learn-more-arrow">
-                    <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
-                </div>
-            </div>
-            <div class="branding-card-box">
-                <div class="img-wrapper">
-                    <img src="/images/identity_branding.png" alt="image">
-                </div>
-                <h2>Identity & Branding</h2>
-                <p>Boost your brand with effect storytelling, SEO-driven articles, strategic campaigns that
-                    engage
-                    audiences .</p>
-                <div class="learn-more-arrow">
-                    <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+    <!-- Branding Section -->
+    <section class="branding-section">
+        <div class="container">
+            <div class="branding-cards">
+                <div class="branding-card-box">
+                    <div class="img-wrapper">
+                        <img src="/images/content-marketing.jpg" alt="image">
+                    </div>
+                    <h2>Content Marketing</h2>
+                    <p>Boost your brand with effective storytelling, SEO-driven articles, and strategic campaigns
+                        that
+                        engage
+                        .</p>
+                    <!-- learn More Arrow -->
+                    <div class="learn-more-arrow">
+                        <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+                    </div>
                 </div>
 
-            </div>
-            <div class="branding-card-box">
-                <div class="img-wrapper">
-                    <img src="/images/product_design.png" alt="image">
+                <div class="branding-card-box">
+                    <div class="img-wrapper">
+                        <img src="/images/social-engagement.png" alt="image">
+                    </div>
+                    <h2>Social Engagement</h2>
+                    <p>Connect with your audience through interactive content, social media strategies, and
+                        engagement
+                        techniques and stastics .</p>
+                    <div class="learn-more-arrow">
+                        <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+                    </div>
                 </div>
-                <h2>Product Design</h2>
-                <p>Create user-friendly, aesthetically appealing, and functional product designs that enhance user
-                    experience .
-                </p>
-                <div class="learn-more-arrow">
-                    <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+                <div class="branding-card-box">
+                    <div class="img-wrapper">
+                        <img src="/images/identity_branding.png" alt="image">
+                    </div>
+                    <h2>Identity & Branding</h2>
+                    <p>Boost your brand with effect storytelling, SEO-driven articles, strategic campaigns that
+                        engage
+                        audiences .</p>
+                    <div class="learn-more-arrow">
+                        <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+                    </div>
+                </div>
+                <div class="branding-card-box">
+                    <div class="img-wrapper">
+                        <img src="/images/product_design.png" alt="image">
+                    </div>
+                    <h2>Product Design</h2>
+                    <p>Create user-friendly, aesthetically appealing, and functional product designs that enhance
+                        user
+                        experience .
+                    </p>
+                    <div class="learn-more-arrow">
+                        <p>Learn More <span><i class="fa-solid fa-arrow-right"></i></span></p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- end of branding-section -->
-    <!-- featuring-section -->
-    <section class="feature-section container">
-        <div class="feature-text-container" id="feature-part">
-            <h3 class="feature-section-title">Why choose Sandbox ?</h3>
-            <p class="feature-section-description">Here are a few reason why our customers choose sandbox</p>
-        </div>
-        <div class="featuring-card-container ">
-            <div class="featuring-card">
-                <div class="img-container">
-                    <img src="/images/collect_ideas.png" alt="image">
+    <!-- feature-section -->
+    <section class="feature-section" id="feature-part">
+        <div class="container">
+            <div class="feature-text-container ">
+                <h3 class="feature-section-sub-title ">Why choose Sandbox ?</h3>
+                <p class="feature-section-title ">Here are a few reason why our customers choose sandbox.</p>
+            </div>
+            <div class="featuring-card-container ">
+                <div class="featuring-card">
+                    <div class="img-container">
+                        <img src="/images/collect_ideas.png" alt="image">
+                    </div>
+                    <div class="featuring-content">
+                        <h3 class="featuring-card-title">
+                            Collect Ideas
+                        </h3>
+                        <p class="featuring-card-description">
+                            Gather diverse ideas to inspire creative solutions and functional product designs enhance
+                            user use.
+                            
+                        </p>
+                    </div>
                 </div>
-                <div class="featuring-content">
-                    <h3 class="featuring-card-title">
-                        Collect Ideas
-                    </h3>
-                    <p class="featuring-card-description">
-                        Gather diverse ideas to inspire creative solutions.
-                    </p>
+                <div class="featuring-card">
+                    <div class="img-container">
+                        <img src="/images/Data_analysis.png" alt="image">
+                    </div>
+                    <div class="featuring-content">
+                        <h3 class="featuring-card-title">
+                            Data Analysis
+                        </h3>
+                        <p class="featuring-card-description">
+                            Analyze data insights to drive informed decisions and deas to inspire creative solutions.
+                        </p>
+                    </div>
+                </div>
+                <div class="featuring-card">
+                    <div class="img-container">
+                        <img src="/images/product_design.png" alt="image">
+                    </div>
+                    <div class="featuring-content">
+                        <h3 class="featuring-card-title">
+                            Finalize Product
+                        </h3>
+                        <p class="featuring-card-description">
+                            Refine product concepts ensuring quality  Boost your brand with effect strategic campaigns 
+                            engage.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="featuring-card">
-                <div class="img-container">
-                    <img src="/images/Data_analysis.png" alt="image">
+            <!--  img and collect ideas part -  -->
+            <article>
+                <div class="img-holder">
+                    <img src="/images/meeting-img.jpg" alt="">
                 </div>
-                <div class="featuring-content">
-                    <h3 class="featuring-card-title">
-                        Data Analysis
-                    </h3>
-                    <p class="featuring-card-description">
-                        Analyze data insights to drive informed decisions.
-                    </p>
-                </div>
-            </div>
-            <div class="featuring-card">
-                <div class="img-container">
-                    <img src="/images/product_design.png" alt="image">
-                </div>
-                <div class="featuring-content">
-                    <h3 class="featuring-card-title">
-                        Finalize Product
-                    </h3>
-                    <p class="featuring-card-description">
-                        Refine product concepts, ensuring quality.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!--  img and collect ideas part -  -->
-        <article>
-            <div class="img-holder">
-                <img src="/images/meeting-img.jpg" alt="">
-            </div>
-            <!-- collect ideas -->
-            <div class="ideas-text-wrapper">
-                <h3>Collect ideas</h3>
-                <p>Brainstorm and gather insights from various sources to fuel innovation. Engage with users, analyze
-                    trends, and explore creative solutions. Collaborate, research, and refine concepts to drive
-                    impactful product design, leverage data-driven decisions, and continuously iterate for meaningful
-                    improvements</p>
-                <div class="checklist-item">
-                    <ul type="none">
-                        <li> <i class="fa-solid fa-square-check" style="color: #437605;"></i>Analyze market data, user
-                            behavior, and emerging patterns.</li>
-                        <li><i class="fa-solid fa-square-check" style="color: #437605;"></i>Collect insights from users,
-                            surveys, and social interactions.</li>
-                        <li> <i class="fa-solid fa-square-check" style="color: #437605;"></i>Evaluate, iterate, and
-                            improve concepts based on analysis.</li>
-                    </ul>
-                </div>
+                <!-- collect ideas -->
+                <div class="ideas-text-wrapper">
+                    <h3>Collect ideas</h3>
+                    <p>Brainstorm and gather insights from various sources to fuel innovation. Engage with users,
+                        analyze
+                        trends, and explore creative solutions. Collaborate, research drive
+                        impactful product design iterate for  meaningful improvements </p>
+                    <div class="checklist-item">
+                        <ul type="none">
+                            
+                            <li><i class="fa-solid fa-square-check" style="color: #437605;"></i>Analyze market data,
+                                user
+                                behavior, and emerging patterns.</li>
+                            
+                            <li><i class="fa-solid fa-square-check" style="color: #437605;"></i>Collect insights from
+                                users,
+                                surveys, and social interactions.</li>
+                            
+                            <li> <i class="fa-solid fa-square-check" style="color: #437605;"></i>Evaluate, iterate, and
+                                improve concepts based on analysis.</li>
+                        </ul>
+                    </div>
 
-                <div class="read-more-btn">
-                    <button class="learn-btn">Learn More</button>
+                    <div class="read-more-btn">
+                        <button class="learn-btn">Learn More</button>
+                    </div>
                 </div>
-            </div>
-        </article>
-        <!-- end of featuring-section -->
+            </article>
+            <!-- end of featuring-section -->
+        </div>
     </section>
     <!-- footer Secttion -->
     <footer>
-        <div class="footer-container container" id="footer">
-            <!-- Company Info -->
-            <div class="footer-section company-info">
-                <h3>Company Name</h3>
-                <p>Innovating for a smarter future.</p>
-                <ul type="none">
-                    <li>
-                        <a href="tel:+254722359463" class="anchor-features">
-                            <p> <i class="fa-solid fa-phone contact-item"
-                                    style="color: #c879d7;"></i><strong>Phone:</strong> +1 (123) 456-7890</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:contact@company.com">
-                            <p> <i class="fa-solid fa-envelope contact-item"
-                                    style="color: #d651ac;"></i><strong>Email:</strong> contact@company.com</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.google.com/maps/place/EnactOn+Technologies+Private+Limited/@21.1473121,72.7573351,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04d8d96d2b733:0x1a5232e28e4094e4!8m2!3d21.1473071!4d72.75991!16s%2Fg%2F11h5w30znh?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-                            class="anchor-features">
-                            <p><i class="fa-solid fa-location-dot contact-item "
-                                    style="color: #e869d0;"></i><strong>Address:</strong> 123 Innovation Street, Tech
-                                City, TX 75001</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="container">
+            <div class="footer-wrapper" id="footer">
+                    <!-- Company Info -->
+                    <div class="footer-section company-info">
+                        <div class="company-branding-img">
+                            <img src="/images/img-logo.png" alt="">
+                        </div>
+                        <p>Innovating for a smarter future.</p>
+                        <ul type="none">
+                            <li class="flex-icon">
+                                <i class="fa-solid fa-phone contact-item" style="color: #c879d7;"></i>
+                                <a href="tel:+254722359463" class="link-features">
+                                    <p> <strong>Phone:</strong> +1 (123) 456-7890</p>
+                                </a>
+                            </li>
+                            <li class="flex-icon">
+                                <i class="fa-solid fa-envelope contact-item" style="color: #d651ac;"></i>
+                                <a href="mailto:contact@company.com">
 
-            <!-- Quick Links -->
-            <div class="footer-section footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">- Home</a></li>
-                    <li><a href="#feature-part">- About Us</a></li>
-                    <li><a href="#">- Services</a></li>
-                    <li><a href="#">- Contact Us</a></li>
-                </ul>
-            </div>
+                                    <p> <strong>Email:</strong> contact@company.com</p>
+                                </a>
+                            </li>
+                            <li class="flex-icon">
+                                <i class="fa-solid fa-location-dot contact-item " style="color: #e869d0;"></i>
+                                <a href="https://www.google.com/maps/place/EnactOn+Technologies+Private+Limited/@21.1473121,72.7573351,17z/data=!3m1!4b1!4m6!3m5!1s0x3be04d8d96d2b733:0x1a5232e28e4094e4!8m2!3d21.1473071!4d72.75991!16s%2Fg%2F11h5w30znh?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
+                                    class="link-features">
 
-            <!-- Resources -->
-            <div class="footer-section footer-links">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="/faqs">- FAQs</a></li>
-                    <li><a href="/support">- Support Center</a></li>
-                    <li><a href="/privacy-policy">- Privacy Policy</a></li>
-                    <li><a href="/terms">- Terms & Conditions</a></li>
-                </ul>
-            </div>
+                                    <p><strong>Address:</strong> Tech
+                                        City, TX 75001</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Quick Links -->
+                    <div class="footer-section footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">- Home</a></li>
+                            <li><a href="#feature-part">- About Us</a></li>
+                            <li><a href="#">- Services</a></li>
+                            <li><a href="#">- Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Resources -->
+                    <div class="footer-section footer-links">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="/faqs">- FAQs</a></li>
+                            <li><a href="/support">- Support Center</a></li>
+                            <li><a href="/privacy-policy">- Privacy Policy</a></li>
+                            <li><a href="/terms">- Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <!-- Social Media -->
+                    <div class="footer-section ">
+                        <h3>Follow Us</h3>
+                        <ul type="none" class="footer-link">
+                            <a href="https://www.facebook.com/TMXGlobal/" class="link-features">
+                                <li><i class="fa-brands fa-facebook"></i></li>
+                            </a>
+                            <a href="https://www.instagram.com/tmx_global_ltd/" class="link-features">
+                                <li><i class="fa-brands fa-instagram style="></i></li>
+                            </a>
+                            <a href="https://x.com/tmxglobal_tmx" class="link-features">
+                                <li><i class="fa-brands fa-x-twitter"></i></li>
+                            </a>
+                            <a href="https://www.youtube.com/results?search_query=fun+with+gaurav"
+                                class="link-features">
+                                <li><i class="fa-brands fa-youtube"></i></li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Social Media -->
-            <div class="footer-section ">
-                <h3>Follow Us</h3>
-                <ul type="none" class="footer-link">
-                    <a href="https://www.facebook.com/TMXGlobal/" class="anchor-features">
-                        <li><i class="fa-brands fa-facebook"></i></li>
-                    </a>
-                    <a href="https://www.instagram.com/tmx_global_ltd/" class="anchor-features">
-                        <li><i class="fa-brands fa-instagram style="></i></li>
-                    </a>
-                    <a href="https://x.com/tmxglobal_tmx" class="anchor-features">
-                        <li><i class="fa-brands fa-x-twitter"></i></li>
-                    </a>
-                    <a href="https://www.youtube.com/results?search_query=fun+with+gaurav" class="anchor-features">
-                        <li><i class="fa-brands fa-youtube"></i></li>
-                    </a>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Copyright Section -->
-        <div class="footer-bottom">
-            <p>&copy; Sandbox. All rights reserved.</p>
-        </div>
     </footer>
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <p>&copy; Sandbox. All rights reserved.</p>
+    </div>
     <a class="scroll-link top-link" href="#home">
         <i class="fas fa-arrow-up"></i>
     </a>
-
-
-    <div class="language-mode">
-        <select id="languageSwitcher" onchange="changeLanguage(this.value)">
-            <option value="en">En</option>
-            <option value="ar">Ar</option>
-        </select>
-
-    </div>
 </body>
 
 </html>

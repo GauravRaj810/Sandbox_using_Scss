@@ -41,11 +41,34 @@ function changeLanguage(lang) {
   const sideLogo = document.querySelector(".side-logo"); // Make sure this is the correct selector
 
   // Hide side logo when language is changed
-  if (sideLogo) {
+/*   if (sideLogo) {
       sideLogo.style.display = "flex";
-      // sideLogo.style.border = "2px solid red"
-      sideLogo.style.marginRight = "35px";
+      sideLogo.style.marginRight = "30px "
   }
+ */
+  if (sideLogo) {
+    if (window.innerWidth > 992) {
+        sideLogo.style.display = "none";
+    } else {
+        sideLogo.style.display = "flex";
+        sideLogo.style.marginRight = "30px";
+    }
+}
+
+// Listen for window resize to dynamically update the display
+window.addEventListener("resize", function () {
+    if (sideLogo) {
+        if (window.innerWidth > 992) {
+            sideLogo.style.display = "none";
+        } else {
+            sideLogo.style.display = "flex";
+            sideLogo.style.marginRight = "30px";
+        }
+    }
+});
+
+
+
 
   // Get elements
   const closeBtn = document.querySelector(".close-btn");
@@ -112,7 +135,7 @@ function openSidebar() {
     body.style.overflow = "hidden"; // Disable scrolling
     body.style.paddingRight = `${scrollbarWidth}px`; // Prevent shifting  // default by padding = 15px
     sidebar.classList.add("show-sidebar");
-    overlay.classList.add("show-overlay");   // adding overlay 
+    overlay.classList.add("show-overlay"); 
 }
 
 // Function to close sidebar

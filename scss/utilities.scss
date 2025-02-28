@@ -113,7 +113,7 @@
   justify-self: center;
 }
 
-/* .side-logo{
+.side-logo{
   display: none;
   text-align: center;
   max-width: 180px;
@@ -121,49 +121,7 @@
     display: flex;
     flex-wrap: wrap;
   }
-} */
-
-
-// Define variables for different language and screen size conditions
-$rtl: 'ar'; // This is the language code for Arabic (RTL)
-$ltr: 'en'; // This is the language code for English (LTR)
-$max-width: 992px; // Max width for media query
-
-.side-logo {
-  display: none; // Default to hidden
-
-  // Set max width for the logo
-  max-width: 180px;
-  text-align: center;
-
-  // Use media query for screen sizes up to $max-width
-  @media (max-width: $max-width) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  // Apply styles for RTL language (when lang="ar")
-  html[lang="#{$rtl}"] & {
-    display: none; // Hide side logo for RTL (language 'ar')
-
-    @media (min-width: $max-width + 1) { // For screens larger than $max-width
-      // Reset styles to default or keep them hidden
-      display: none;
-    }
-  }
-
-  // Apply styles for LTR language (when lang="en")
-  html[lang="#{$ltr}"] & {
-    display: flex; // Display the logo for LTR (language 'en')
-
-    // Apply specific styles for screens larger than $max-width
-    @media (min-width: $max-width + 1) {
-      border: 2px solid red; // Example custom style
-      margin-right: 35px; // Example custom style
-    }
-  }
 }
-
 .links a {
   text-decoration: none;
   display: block;

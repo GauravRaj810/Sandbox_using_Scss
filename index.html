@@ -59,7 +59,6 @@
             </button>
             <aside class="sidebar">
                 <div class="sidebar-header">
-                    <img src="/images/img-logo.png" class="logo" alt="" />
                     <div class="language-mode">
                         <select id="languageSwitcher" onchange="changeLanguage(this.value)">
                             <option value="en">En</option>
@@ -69,14 +68,17 @@
                     <button class="close-btn"><i class="fas fa-times"></i></button>
                 </div>
                 <!-- links -->
+                 <div class="sidebar-link-wrapper">
                 <ul type="none" class="links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#">Pages</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#feature-part">About</a></li>
                     <li><a href="#footer">Contact Us</a></li>
+                    <li><a href="#feature-part">About</a></li>
+                    
                 </ul>
+            </div>
                 <div class="footer-side-section ">
                     <h3>Follow Us</h3>
                     <ul type="none" class="footer-mobile-link">
@@ -97,6 +99,8 @@
         </div>
         </aside>
     </header>
+    <div class="overlay"></div>
+
     <!-- end of header -->
     <!-- hero section  -->
     <div class="hero-section">
@@ -113,7 +117,8 @@
         <!-- end of hero content -->
     </div>
     <!-- Branding Section -->
-    <section class="branding-section">
+    <section >
+        <div class="branding-section">
         <div class="container">
             <div class="branding-cards">
                 <div class="branding-card-box">
@@ -169,12 +174,13 @@
                     </div>
                 </div>
             </div>
-
+        </div>
         </div>
     </section>
     <!-- end of branding-section -->
     <!-- feature-section -->
-    <section class="feature-section" id="feature-part">
+    <section >
+        <div class="feature-section" id="feature-part">
         <div class="container">
             <div class="feature-text-container ">
                 <h3 class="feature-section-sub-title ">Why choose Sandbox ?</h3>
@@ -225,7 +231,7 @@
                 </div>
             </div>
             <!--  img and collect ideas part -  -->
-            <article>
+            <div class="collect-idea-wrapper">
                 <div class="img-holder">
                     <img src="/images/meeting-img.jpg" alt="">
                 </div>
@@ -256,9 +262,10 @@
                         <button class="learn-btn">Learn More</button>
                     </div>
                 </div>
-            </article>
+            </div>
             <!-- end of featuring-section -->
         </div>
+    </div>
     </section>
     <!-- footer Secttion -->
     <footer>

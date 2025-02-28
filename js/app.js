@@ -16,12 +16,61 @@ topLink.addEventListener("click", function (event) {
     });
 });
 
-// Changing the layout for langauage right to left / left to right -- 
+// // Changing the layout for langauage right to left / left to right -- 
+// function changeLanguage(lang) {
+//   // Update language attributes
+//   document.documentElement.setAttribute("lang", lang);
+//   document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
+//   document.body.style.textAlign = lang === "ar" ? "right" : "left";
+
+//   // selecting sidebar logo 
+//   const sideLogo = document.querySelector(".side-logo"); // Make sure this is the correct selector
+
+//   // Hide side logo when language is changed
+//   if (sideLogo) {
+//       sideLogo.style.display = "none";
+//   }
+// }
+
 function changeLanguage(lang) {
-    document.documentElement.setAttribute("lang", lang);
-    document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
-    document.body.style.textAlign = lang === "ar" ? "right" : "left";
+  // Update language attributes
+  document.documentElement.setAttribute("lang", lang);
+  document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
+  document.body.style.textAlign = lang === "ar" ? "right" : "left";
+  
+  const sideLogo = document.querySelector(".side-logo"); // Make sure this is the correct selector
+
+  // Hide side logo when language is changed
+  if (sideLogo) {
+      sideLogo.style.display = "flex";
+      // sideLogo.style.border = "2px solid red"
+      sideLogo.style.marginRight = "35px";
+  }
+
+  // Get elements
+  const closeBtn = document.querySelector(".close-btn");
+  const languageMode = document.querySelector(".language-mode");
+
+  if (closeBtn && languageMode) {
+      if (lang === "ar") {  // for rtl 
+
+          closeBtn.style.right = "auto";
+          closeBtn.style.left = "0";
+
+          languageMode.style.left = "auto";
+          languageMode.style.right = "0";
+      } else {  // for ltr
+
+          closeBtn.style.left = "auto";
+          closeBtn.style.right = "0";
+
+          languageMode.style.right = "auto";
+          languageMode.style.left = "0";
+      }
+  }
 }
+
+
 // adding background to header ! 
 window.onscroll = function() {
     var header = document.querySelector('header');
@@ -48,35 +97,57 @@ window.onscroll = function() {
     });
   });
 
-  // sidebar - 
-  const toggleBtn = document.querySelector(".mobile-view-button");
-  const closeBtn = document.querySelector(".close-btn");
-  const sidebar = document.querySelector(".sidebar");
-  const header = document.querySelector("header");
-  const logoImg = document.querySelector(".side-logo img"); // Selects the image inside .side-logo
-  
-  
-  toggleBtn.addEventListener("click", function () {
-      sidebar.classList.toggle("show-sidebar");  // Toggle sidebar visibility
-  
-      if (logoImg) {
-          logoImg.classList.add("hidden");  
-      }
-  });
-  
-  closeBtn.addEventListener("click", function () {
-      sidebar.classList.remove("show-sidebar");  // Hide sidebar
-      
-      if (logoImg) {
-          logoImg.classList.remove("hidden");  // Ensure logo is hidden when closing
-      }
-  });
-  
-  
+
+
+const toggleBtn = document.querySelector(".mobile-view-button");
+const closeBtn = document.querySelector(".close-btn");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".overlay");
+const body = document.body;
+const sidebarLinks = document.querySelectorAll(".sidebar .links a"); // Get all sidebar links
+
+// Function to open sidebar
+function openSidebar() {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    body.style.overflow = "hidden"; // Disable scrolling
+    body.style.paddingRight = `${scrollbarWidth}px`; // Prevent shifting  // default by padding = 15px
+    sidebar.classList.add("show-sidebar");
+    overlay.classList.add("show-overlay");   // adding overlay 
+}
+
+// Function to close sidebar
+function closeSidebar() {
+    body.style.overflow = ""; // Enable scrolling
+    body.style.paddingRight = ""; // Remove extra space
+    sidebar.classList.remove("show-sidebar");
+    overlay.classList.remove("show-overlay"); 
+}
+
+// Toggle sidebar on button click
+toggleBtn.addEventListener("click", openSidebar);
+
+// Close sidebar when clicking close button
+closeBtn.addEventListener("click", closeSidebar);
+
+// Close sidebar when clicking on overlay
+overlay.addEventListener("click", closeSidebar);
+
+// Close sidebar when clicking a link inside it
+sidebarLinks.forEach(link => {
+    link.addEventListener("click", closeSidebar);
+});
+
+
+
+
+
   
 
 
-// hiding logo 
+
+  
+  
+
 
   
   

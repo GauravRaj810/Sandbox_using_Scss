@@ -1,0 +1,47 @@
+// Navbar
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+  
+    @media (max-width: 992px) {
+      display: none;
+    }
+    .nav-items {
+      justify-content: space-between;
+      display: flex;
+      gap: 50px;
+      @media (max-width: 1200px) {
+        gap: 40px;
+      }
+    }
+  
+    a {
+      color: $clr-blue;
+      position: relative;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 28.9px;
+      transition: color 0.3s ease-in-out, transform 0.2s ease; // Added scaling effect
+  
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.1); // Scaling effect on hover
+      }
+  
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0;
+        height: 2px;
+        background: $primary-color;
+        transition: width 0.4s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+        box-shadow: 0 0 8px $primary-color;
+      }
+    }
+  }

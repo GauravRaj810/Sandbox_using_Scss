@@ -1,9 +1,9 @@
 .footer-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* Adjusted min size */
-  padding: 15px 25px;
-  max-width: 1200px;
-  margin: 0 auto 50px auto;
+  padding: 0 25px 50px 25px;
+  // max-width: px;
+
   gap: 20px; /* Slightly increased gap for better spacing */
 
 
@@ -29,11 +29,6 @@
   }
  
 }
-
-
-
-
-
 
 // Quick Links styling -----
 .footer-links a {

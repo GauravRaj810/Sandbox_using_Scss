@@ -4,10 +4,8 @@
     margin: 0 auto;
 
   }
-
-
   .language-mode select{
-    margin-left:10px ;
+    // margin-left:5px ;
     padding: 7px 3px;
     cursor: pointer;
     border: none;
@@ -71,7 +69,7 @@
   }
 }
 .mobile-view-button:hover {
-  color: $primary-color;
+  color: $clr-orange;
 }
 @keyframes bounce {
   0% {
@@ -85,8 +83,11 @@
   }
   
 }
-
+.sidebar-link-wrapper{
+  padding-right: 110px;
+}
 .sidebar-header {
+  position: relative;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -94,6 +95,10 @@
 }
 .close-btn {
   font-size: 1.75rem;;
+  position: absolute;
+  top: 1;
+  right: 0;
+  padding: 10px 15px;
   background: transparent;
   border-color: transparent;
   color: $clr-blue;
@@ -102,19 +107,60 @@
 }
 .close-btn:hover {
   color: $clr-orange;
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
 }
 .logo {
   justify-self: center;
 }
 
-.side-logo{
+/* .side-logo{
   display: none;
   text-align: center;
   max-width: 180px;
   @media(max-width:992px){
     display: flex;
     flex-wrap: wrap;
+  }
+} */
+
+
+// Define variables for different language and screen size conditions
+$rtl: 'ar'; // This is the language code for Arabic (RTL)
+$ltr: 'en'; // This is the language code for English (LTR)
+$max-width: 992px; // Max width for media query
+
+.side-logo {
+  display: none; // Default to hidden
+
+  // Set max width for the logo
+  max-width: 180px;
+  text-align: center;
+
+  // Use media query for screen sizes up to $max-width
+  @media (max-width: $max-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // Apply styles for RTL language (when lang="ar")
+  html[lang="#{$rtl}"] & {
+    display: none; // Hide side logo for RTL (language 'ar')
+
+    @media (min-width: $max-width + 1) { // For screens larger than $max-width
+      // Reset styles to default or keep them hidden
+      display: none;
+    }
+  }
+
+  // Apply styles for LTR language (when lang="en")
+  html[lang="#{$ltr}"] & {
+    display: flex; // Display the logo for LTR (language 'en')
+
+    // Apply specific styles for screens larger than $max-width
+    @media (min-width: $max-width + 1) {
+      border: 2px solid red; // Example custom style
+      margin-right: 35px; // Example custom style
+    }
   }
 }
 
@@ -132,33 +178,35 @@
   color: $clr-orange;
   padding-left: 1.75rem;
 }
+
 .sidebar {
-  display: none;
+    overflow-y: auto; /* Enables scrolling if content is too long */
+  z-index: 101;
+  display: flex; /* Ensures elements stack properly */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Push footer to the bottom */
   position: fixed;
   border-radius: 8px;
   top: 0;
   right: 0;
   max-width: 300px; 
-  height: 100vh;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.144);
-  flex-direction: column;
   backdrop-filter: blur(40px);
   gap: 1rem;
   box-shadow: $clr-orange;
   transition: $transition;
-  transform: translate(100%);   /* intially hidden the side bar  */
-  @media(max-width:992px){
-    display: flex;
-   
-    
+  transform: translate(100%); /* Initially hidden */
+  
+  @media (max-width: 992px) {
+      display: flex;
   }
 }
 .show-sidebar {
   transform: translate(0);
   
 }
-
 .footer-mobile-link {
   display: flex;
   gap: 20px;
@@ -173,21 +221,33 @@
     box-shadow: 0 0 30px $primary-color;
   }
 }
-.footer-side-section{
-  position: fixed;
-  bottom: 0;
-  padding: 0 0 40px 30px;
-  $padding-side-footer: "ar";
-  @if $padding-side-footer== "ar" {
-   .footer-side-section{
-    padding: 0 30px 40px 0;
-  }
+
+.footer-side-section {
+  padding: 20px 50px;
+  margin-top: auto; /* Pushes it to the bottom */
 }
-}
+
+
 .hidden {
   display: none;
 }
 
 
+.overlay {
+  position: fixed;
+  top: 0; /* Cover entire screen */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100; /* Ensure it stays below sidebar & header */
+  display: none;
+}
+.show-overlay {
+  display: block;
+}
+.no-scroll {
+  overflow: hidden;
+}
 
 

@@ -16,21 +16,7 @@ topLink.addEventListener("click", function (event) {
     });
 });
 
-// // Changing the layout for langauage right to left / left to right -- 
-// function changeLanguage(lang) {
-//   // Update language attributes
-//   document.documentElement.setAttribute("lang", lang);
-//   document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
-//   document.body.style.textAlign = lang === "ar" ? "right" : "left";
-
-//   // selecting sidebar logo 
-//   const sideLogo = document.querySelector(".side-logo"); // Make sure this is the correct selector
-
-//   // Hide side logo when language is changed
-//   if (sideLogo) {
-//       sideLogo.style.display = "none";
-//   }
-// }
+// ************ changing layout RTL to LTR ********** 
 
 function changeLanguage(lang) {
   // Update language attributes
@@ -38,14 +24,7 @@ function changeLanguage(lang) {
   document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
   document.body.style.textAlign = lang === "ar" ? "right" : "left";
   
-  const sideLogo = document.querySelector(".side-logo"); // Make sure this is the correct selector
-
-  // Hide side logo when language is changed
-/*   if (sideLogo) {
-      sideLogo.style.display = "flex";
-      sideLogo.style.marginRight = "30px "
-  }
- */
+  const sideLogo = document.querySelector(".side-logo"); 
   if (sideLogo) {
     if (window.innerWidth > 992) {
         sideLogo.style.display = "none";
@@ -66,7 +45,6 @@ window.addEventListener("resize", function () {
         }
     }
 });
-
 
 
 
